@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { MainContext } from '../Context/MainContext';
 import { Text, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import Title from '../Components/Title';
-import moment from 'moment';
+import { Overlay } from 'react-native-elements';
+import { AntDesign } from '@expo/vector-icons';
 
 //Import our components
 import TitleComponent from '../Components/CardComponents/TitleComponent';
@@ -16,11 +17,15 @@ import BibleToggleComponent from '../Components/CardComponents/BibleToggleCompon
 
 const SessionScreen = ({ navigation, route }) => {
   const { appData, lectionary } = useContext(MainContext);
-  const [scrollEnabled, setScrollEnabled] = useState(true);
   let { sundayIndex } = route.params;
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const loadMenu = () => {
     navigation.toggleDrawer();
+  };
+
+  const toggleVerse = () => {
+    setShowOverlay(!showOverlay);
   };
   //If it doesn't return a 'this material is coming soon
   //NOTE - This will probably break in 6 years!
@@ -71,7 +76,7 @@ const SessionScreen = ({ navigation, route }) => {
     <>
       <Title loadMenu={loadMenu} />
       <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.scrollView} scrollEnabled={scrollEnabled}>
+        <ScrollView style={styles.scrollView}>
           <TitleComponent sunday={sunday} title={title} />
           <View style={styles.spacer} />
           <DiscussComponent thought={thought} />
@@ -89,11 +94,32 @@ const SessionScreen = ({ navigation, route }) => {
           <BibleToggleComponent
             reading={reading}
             urlBibleVerse={urlBibleVerse}
-            navigation={navigation}
+            toggleVerse={toggleVerse}
           />
           <View style={styles.spacer} />
 
           <WeekComponent week={week} year={year} />
+          <Overlay
+            isVisible={showOverlay}
+            onBackdropPress={() => toggleVerse()}
+            overlayStyle={styles.overlay}
+          >
+            <View>
+              <View style={styles.topOverlay}>
+                <AntDesign
+                  name="close"
+                  size={24}
+                  color="white"
+                  style={styles.closeIcon}
+                  onPress={() => {
+                    toggleVerse();
+                  }}
+                />
+              </View>
+
+              <BibleComponent urlBibleVerse={urlBibleVerse} />
+            </View>
+          </Overlay>
         </ScrollView>
       </SafeAreaView>
     </>
@@ -131,6 +157,23 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginTop: -10,
     marginBottom: 20,
+  },
+  overlay: {
+    width: '95%',
+    height: '90%',
+    backgroundColor: 'white',
+  },
+  topOverlay: {
+    backgroundColor: '#1C3B98',
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+  },
+  closeIcon: {
+    textAlign: 'right',
+    paddingTop: 7,
+    paddingRight: 5,
+    paddingBottom: 5,
+    color: 'white',
   },
 });
 

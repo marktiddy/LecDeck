@@ -4,9 +4,9 @@ import { WebView } from 'react-native-webview';
 
 const BibleComponent = ({ urlBibleVerse }) => {
   const url = `https://www.biblegateway.com/passage/?search=${urlBibleVerse}&version=NIV`;
-  const [showView, setShowView] = useState(true);
   return (
-    <View style={{ height: Platform.OS === 'ios' ? 500 : 2500 }}>
+    // <View style={{ height: Platform.OS === 'ios' ? 500 : 2500 }}>
+    <View style={{ height: '95%' }}>
       <WebView
         source={{ uri: url }}
         keyboardDisplayRequiresUserAction={false}
