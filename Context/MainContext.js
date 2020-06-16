@@ -3438,9 +3438,11 @@ export const MainProvider = ({ children }) => {
   const [lectionary, setLectionary] = useState(dates_to_use);
 
   //Helper function to get this Sunday
-  const getThisSunday = () => {
+  const getThisSunday = (dateToRound) => {
     const dayToGet = 7; //Sunday
-    let today = new Date();
+    //let today = new Date();
+    let today = dateToRound;
+
     const diff = today.getDay() - dayToGet;
     if (diff > 0) {
       today.setDate(today.getDate() + 6);
@@ -3458,11 +3460,14 @@ export const MainProvider = ({ children }) => {
         const arrDate = moment(dates_to_use.dates[i])
           .utc()
           .local()
+          .isoWeekday(7)
           .format('ddd Do MMM YY');
-        const thisSunday = moment(getThisSunday())
+
+        const thisSunday = moment(getThisSunday(new Date()))
           .utc()
           .local()
           .format('ddd Do MMM YY');
+
         if (thisSunday === arrDate) {
           setCurrentSundayIndex(i);
           setIsLoading(false);

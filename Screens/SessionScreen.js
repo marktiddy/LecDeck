@@ -4,6 +4,7 @@ import { Text, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import Title from '../Components/Title';
 import { Overlay } from 'react-native-elements';
 import { AntDesign } from '@expo/vector-icons';
+import moment from 'moment';
 
 //Import our components
 import TitleComponent from '../Components/CardComponents/TitleComponent';
@@ -77,7 +78,13 @@ const SessionScreen = ({ navigation, route }) => {
       <Title loadMenu={loadMenu} />
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
-          <TitleComponent sunday={sunday} title={title} />
+          <TitleComponent
+            sunday={sunday}
+            title={title}
+            date={moment(lectionary.dates[sundayIndex])
+              .isoWeekday(7)
+              .format('dddd Do MMMM YYYY')}
+          />
           <View style={styles.spacer} />
           <DiscussComponent thought={thought} />
           <View style={styles.spacer} />

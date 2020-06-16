@@ -2,11 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-const TitleComponent = ({ title, sunday }) => {
+const TitleComponent = ({ title, sunday, date }) => {
   return (
     <View style={styles.row}>
       <View style={styles.smallCol}>
         <Text style={styles.titleText}>{title}</Text>
+        <Text style={styles.subTitleText}>{date}</Text>
         <Text style={styles.subTitleText}>{sunday}</Text>
       </View>
     </View>

@@ -71,9 +71,9 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.baseInfo}>
             <Text style={styles.baseInfoText}>
               This Sunday:{' '}
-              {moment(lectionary.dates[currentSundayIndex]).format(
-                'Do MMM YYYY'
-              )}
+              {moment(lectionary.dates[currentSundayIndex])
+                .isoWeekday(7)
+                .format('Do MMM YYYY')}
             </Text>
 
             <Text style={styles.baseInfoText}>

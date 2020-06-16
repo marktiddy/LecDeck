@@ -3,7 +3,7 @@
     "name": "LecDeck",
     "slug": "LecDeck",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.91",
+    "version": "1.1",
     "hooks": {
       "postPublish": [
         {
@@ -38,11 +38,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.0.91"
+      "buildNumber": "1.1.0"
     },
     "android": {
-      "package": "com.mtmedia.lecdeck",
-      "versionCode": 1
+      "package": "com.mtmedia.leckdeck",
+      "versionCode": 3
     }
   }
 }

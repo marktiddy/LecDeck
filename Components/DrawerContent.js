@@ -43,7 +43,9 @@ const DrawerContent = (props) => {
         //Other Sunday in the future
         dateItems.push(
           <DateComponent
-            date={moment(lectionary.dates[i]).format("ddd Do MMMM 'YY")}
+            date={moment(lectionary.dates[i])
+              .isoWeekday(7)
+              .format("ddd Do MMMM 'YY")}
             sundayIndex={i}
             key={i}
             props={props}
