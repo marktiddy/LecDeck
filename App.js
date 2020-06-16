@@ -1,14 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { MainProvider } from './Context/MainContext';
-
+import { sentKey } from './keys/sentry';
 import * as Sentry from 'sentry-expo';
 
 import MainComp from './Components/MainComp';
 
 Sentry.init({
-  dsn:
-    'https://2d205916c3ca4e629cc5bfdfca1e2315@o407062.ingest.sentry.io/5275587',
+  dsn: sentKey,
   enableInExpoDevelopment: true,
   debug: true,
 });
