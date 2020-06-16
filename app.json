@@ -2,27 +2,47 @@
   "expo": {
     "name": "LecDeck",
     "slug": "LecDeck",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.9",
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "mrtmedia",
+            "project": "lecdeck",
+            "authToken": "a10ac17112ef4516b9d680c2f8d92aec870887582c654cf9b345846db07a2d14"
+          }
+        }
+      ]
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#212121"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "**/*",
+      "./node_modules/@expo/vector-icons/AntDesign.js",
+      "./node_modules/@expo/vector-icons/FontAwesome5.js",
+      "./node_modules/@expo/vector-icons/Ionicons.js",
+      "./node_modules/@expo/vector-icons/FontAwesome.js",
+      "./node_modules/moment",
+      "./assets/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mtmedia.lecdeck",
+      "buildNumber": "1.0.9"
+    },
+    "android": {
+      "package": "com.mtmedia.lecdeck",
+      "versionCode": 1
     }
   }
 }
