@@ -1,5 +1,12 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import Title from '../Components/Title';
 import { MainContext } from '../Context/MainContext';
 import { AntDesign } from '@expo/vector-icons';
@@ -68,18 +75,27 @@ const HomeScreen = ({ navigation }) => {
             selected from the principal service for each Sunday.
           </Text>
           <View style={styles.spacer} />
-          <View style={styles.baseInfo}>
-            <Text style={styles.baseInfoText}>
-              This Sunday:{' '}
-              {moment(lectionary.dates[currentSundayIndex])
-                .isoWeekday(7)
-                .format('Do MMM YYYY')}
-            </Text>
 
-            <Text style={styles.baseInfoText}>
-              {appData[currentSundayIndex].sunday}
-            </Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Session', {
+                sundayIndex: currentSundayIndex,
+              });
+            }}
+          >
+            <View style={styles.baseInfo}>
+              <Text style={styles.baseInfoText}>
+                This Sunday:{' '}
+                {moment(lectionary.dates[currentSundayIndex])
+                  .isoWeekday(7)
+                  .format('Do MMM YYYY')}
+              </Text>
+
+              <Text style={styles.baseInfoText}>
+                {appData[currentSundayIndex].sunday}
+              </Text>
+            </View>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     </>

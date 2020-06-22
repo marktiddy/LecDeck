@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
-import BibleComponent from './BibleComponent';
-
 const BibleToggleComponent = ({ reading, toggleVerse, urlBibleVerse }) => {
   return (
     <>

@@ -86,6 +86,12 @@ const SessionScreen = ({ navigation, route }) => {
               .format('dddd Do MMMM YYYY')}
           />
           <View style={styles.spacer} />
+          <BibleToggleComponent
+            reading={reading}
+            urlBibleVerse={urlBibleVerse}
+            toggleVerse={toggleVerse}
+          />
+          <View style={styles.spacer} />
           <DiscussComponent thought={thought} />
           <View style={styles.spacer} />
           <PrayerComponent prayer={prayer} />
@@ -97,12 +103,6 @@ const SessionScreen = ({ navigation, route }) => {
             quoteContent={quoteContent}
           />
 
-          <View style={styles.spacer} />
-          <BibleToggleComponent
-            reading={reading}
-            urlBibleVerse={urlBibleVerse}
-            toggleVerse={toggleVerse}
-          />
           <View style={styles.spacer} />
 
           <WeekComponent week={week} year={year} />
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   topOverlay: {
-    backgroundColor: '#1C3B98',
+    backgroundColor: '#840F2E',
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
   },
