@@ -28,11 +28,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.1.1"
+      "buildNumber": "1.1.2"
     },
     "android": {
       "package": "com.mtmedia.leckdeck",
-      "versionCode": 4
+      "versionCode": 5
     }
   }
 }

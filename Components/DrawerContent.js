@@ -1,5 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { MainContext } from '../Context/MainContext';
@@ -66,7 +72,12 @@ const DrawerContent = (props) => {
   return (
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
-        <View style={styles.closeButton}>
+        <View
+          style={[
+            styles.closeButton,
+            Platform.OS === 'ios' ? styles.closeButtonIos : styles.closeButtonA,
+          ]}
+        >
           <TouchableOpacity
             onPress={() => {
               props.navigation.toggleDrawer();
@@ -75,7 +86,9 @@ const DrawerContent = (props) => {
             <AntDesign name="close" size={24} color="white" />
           </TouchableOpacity>
         </View>
-        <View style={styles.main}>
+        <View
+          style={[styles.main, Platform.OS === 'ios' ? null : styles.mainA]}
+        >
           <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
             <View style={styles.customItem}>
               <AntDesign name="home" style={styles.customItemIcon} />
@@ -126,12 +139,20 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     position: 'absolute',
-    marginTop: 12,
     right: 0,
+  },
+  closeButtonIos: {
+    marginTop: 12,
+  },
+  closeButtonA: {
+    marginTop: -6,
   },
   main: {
     marginTop: 10,
     color: 'black',
+  },
+  mainA: {
+    marginTop: 18,
   },
   titleArea: {
     paddingHorizontal: 10,
