@@ -32,7 +32,9 @@ const HomeScreen = ({ navigation }) => {
       <Title loadMenu={loadMenu} />
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
-          <Text style={[styles.text, styles.welcome]}>Welcome to LecDeck</Text>
+          <Text style={[styles.text, styles.welcome, styles.blackText]}>
+            Welcome to LecDeck
+          </Text>
           <Text style={styles.text}>
             The LecDeck app can be used in a variety of settings with young
             people on Sunday mornings, the basis for group sessions and Bible

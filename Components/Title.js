@@ -28,17 +28,9 @@ const Title = ({ loadMenu }) => {
           />
         </TouchableOpacity>
       }
-      backgroundColor="#1C3B98"
+      backgroundColor="#212121"
     />
   );
 };
 
 export default Title;
-
-//Old icon
-//  <Icon
-//           name="menu"
-//           color="#fff"
-//           onPress={burgerPress}
-//           underlayColor={'#1c1c1c'}
-//         />

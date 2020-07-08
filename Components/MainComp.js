@@ -26,7 +26,7 @@ const MainComp = () => {
       <StatusBar barStyle="light-content" />
       <Drawer.Navigator
         initialRouteName="Home"
-        overlayColor="#1c1c1c"
+        overlayColor="#840F2E"
         drawerContentOptions={{
           activeBackgroundColor: 'purple',
           activeTintColor: '#ffffff',

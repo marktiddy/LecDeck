@@ -5,7 +5,7 @@
     "platforms": [
       "ios", "android", "web"
     ],
-    "version": "1.2",
+    "version": "1.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,11 +28,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.1.2"
+      "buildNumber": "1.1.3"
     },
     "android": {
       "package": "com.mtmedia.leckdeck",
-      "versionCode": 5
+      "versionCode": 6
     }
   }
 }

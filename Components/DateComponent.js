@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   customItemText: {
-    color: '#1C3B98',
+    color: '#212121',
     fontSize: 16,
   },
   customItemIcon: {
-    color: '#1C3B98',
+    color: '#212121',
     fontSize: 24,
     marginRight: 20,
   },
