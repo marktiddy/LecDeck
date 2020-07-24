@@ -45,6 +45,12 @@ const HomeScreen = ({ navigation }) => {
           <Text style={[styles.text, styles.welcome, styles.blackText]}>
             Each session contains:
           </Text>
+          <View style={[styles.info, styles.bgRed]}>
+            <FontAwesome5 name="bible" style={styles.icon} />
+            <Text style={[styles.text, styles.whiteText]}>
+              Bible reading from the Lectionary
+            </Text>
+          </View>
           <View style={[styles.info, styles.bgPink]}>
             <AntDesign name="questioncircle" style={styles.icon} />
             <Text style={[styles.text, styles.whiteText]}>
@@ -61,12 +67,7 @@ const HomeScreen = ({ navigation }) => {
               Weekly challenge
             </Text>
           </View>
-          <View style={[styles.info, styles.bgRed]}>
-            <FontAwesome5 name="bible" style={styles.icon} />
-            <Text style={[styles.text, styles.whiteText]}>
-              Bible reading from the Lectionary
-            </Text>
-          </View>
+
           <View style={[styles.info, styles.bgYellow]}>
             <FontAwesome5 name="quote-left" style={styles.icon} />
             <Text style={[styles.text, styles.whiteText]}>Quotable quotes</Text>
