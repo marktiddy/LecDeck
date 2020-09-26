@@ -2,10 +2,8 @@
   "expo": {
     "name": "LecDeck",
     "slug": "LecDeck",
-    "platforms": [
-      "ios", "android", "web"
-    ],
-    "version": "1.5",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,11 +26,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.1.5"
+      "buildNumber": "1.1.7"
     },
     "android": {
       "package": "com.mtmedia.leckdeck",
-      "versionCode": 8
+      "versionCode": 10
     }
   }
 }

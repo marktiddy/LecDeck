@@ -3436,7 +3436,7 @@ const data_to_use = {
       year: 'B',
       challenge: 'Work on any areas of your life where you lack thankfulness.',
       thought:
-        'Talk about times when you have been in conflict with others.\n\nPaul praises God for the Corinthian church. How must you talk about and treat other churches?\n\nWhy should you be thankful amid chaos, misery and trials?\n',
+        'When have you been in conflict with others?\n\nPaul praises God for the Corinthian church. How must you talk about and treat other churches?\n\nWhy should you be thankful amid chaos, misery and trials?\n',
       prayer: 'Ask God to help you be thankful at all times.',
     },
     {
