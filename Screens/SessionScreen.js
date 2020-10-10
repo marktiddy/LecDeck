@@ -124,7 +124,7 @@ const SessionScreen = ({ navigation, route }) => {
                 />
               </View>
 
-              <BibleComponent urlBibleVerse={urlBibleVerse} />
+              <BibleComponent urlBibleVerse={urlBibleVerse} reading={reading} />
             </View>
           </Overlay>
         </ScrollView>
