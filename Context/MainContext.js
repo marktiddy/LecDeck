@@ -4243,13 +4243,28 @@ export const MainProvider = ({ children }) => {
     let today = dateToRound;
 
     const diff = today.getDay() - dayToGet;
-    if (diff > 0) {
+
+    //If today is sunday
+    if (today.getDay() == 0) {
+      today.setDate(today.getDate());
+      return today;
+      //If our day is greater than 0 we look for next Sunday
+    } else if (diff > 0) {
       today.setDate(today.getDate() + 6);
       return today;
+      //If our day is less than zero
     } else if (diff < 0) {
       today.setDate(today.getDate() + -1 * diff);
       return today;
     }
+    //OLD CODE THAT WORKED BUT GOT NEXT SUNDAY ON A SUNDAY
+    // if (diff > 0) {
+    //   today.setDate(today.getDate() + 6);
+    //   return today;
+    // } else if (diff < 0) {
+    //   today.setDate(today.getDate() + -1 * diff);
+    //   return today;
+    // }
   };
 
   useEffect(() => {
