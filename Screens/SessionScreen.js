@@ -32,7 +32,6 @@ const SessionScreen = ({ navigation, route }) => {
   //NOTE - This will probably break in 6 years!
   //For logic - years with 53 Sundays - 2023,
   //Check our week exists
-  console.log(typeof appData[sundayIndex]);
   if (typeof appData[sundayIndex] != "undefined") {
     //This week exists
   } else if (sundayIndex >= 156) {
