@@ -1,20 +1,20 @@
-import React, { useContext, useState } from 'react';
-import { MainContext } from '../Context/MainContext';
-import { Text, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import Title from '../Components/Title';
-import { Overlay } from 'react-native-elements';
-import { AntDesign } from '@expo/vector-icons';
-import moment from 'moment';
+import React, { useContext, useState } from "react";
+import { MainContext } from "../Context/MainContext";
+import { Text, SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import Title from "../Components/Title";
+import { Overlay } from "react-native-elements";
+import { AntDesign } from "@expo/vector-icons";
+import moment from "moment";
 
 //Import our components
-import TitleComponent from '../Components/CardComponents/TitleComponent';
-import DiscussComponent from '../Components/CardComponents/DiscussComponent';
-import PrayerComponent from '../Components/CardComponents/PrayerComponent';
-import ChallengeComponent from '../Components/CardComponents/ChallengeComponent';
-import QuoteComponent from '../Components/CardComponents/QuoteComponent';
-import WeekComponent from '../Components/CardComponents/WeekComponent';
-import BibleComponent from '../Components/CardComponents/BibleComponent';
-import BibleToggleComponent from '../Components/CardComponents/BibleToggleComponent';
+import TitleComponent from "../Components/CardComponents/TitleComponent";
+import DiscussComponent from "../Components/CardComponents/DiscussComponent";
+import PrayerComponent from "../Components/CardComponents/PrayerComponent";
+import ChallengeComponent from "../Components/CardComponents/ChallengeComponent";
+import QuoteComponent from "../Components/CardComponents/QuoteComponent";
+import WeekComponent from "../Components/CardComponents/WeekComponent";
+import BibleComponent from "../Components/CardComponents/BibleComponent";
+import BibleToggleComponent from "../Components/CardComponents/BibleToggleComponent";
 
 const SessionScreen = ({ navigation, route }) => {
   const { appData, lectionary } = useContext(MainContext);
@@ -32,7 +32,8 @@ const SessionScreen = ({ navigation, route }) => {
   //NOTE - This will probably break in 6 years!
   //For logic - years with 53 Sundays - 2023,
   //Check our week exists
-  if (appData[sundayIndex]) {
+  console.log(typeof appData[sundayIndex]);
+  if (typeof appData[sundayIndex] != "undefined") {
     //This week exists
   } else if (sundayIndex >= 156) {
     //We're at least 3 years in the future
@@ -83,7 +84,7 @@ const SessionScreen = ({ navigation, route }) => {
             title={title}
             date={moment(lectionary.dates[sundayIndex])
               .isoWeekday(7)
-              .format('dddd Do MMMM YYYY')}
+              .format("dddd Do MMMM YYYY")}
           />
           <View style={styles.spacer} />
           <BibleToggleComponent
@@ -142,10 +143,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   welcome: {
-    color: '#1C3B98',
+    color: "#1C3B98",
     marginBottom: 14,
     fontSize: 22,
-    textAlign: 'center',
+    textAlign: "center",
   },
   spacer: {
     height: 10,
@@ -153,34 +154,34 @@ const styles = StyleSheet.create({
   text: {
     lineHeight: 26,
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
   },
   redText: {
-    color: '#840F2E',
+    color: "#840F2E",
   },
   purpleText: {
-    color: '#6e487e',
+    color: "#6e487e",
     fontSize: 20,
-    fontWeight: '500',
+    fontWeight: "500",
     marginTop: -10,
     marginBottom: 20,
   },
   overlay: {
-    width: '95%',
-    height: '90%',
-    backgroundColor: 'white',
+    width: "95%",
+    height: "90%",
+    backgroundColor: "white",
   },
   topOverlay: {
-    backgroundColor: '#840F2E',
+    backgroundColor: "#840F2E",
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
   },
   closeIcon: {
-    textAlign: 'right',
+    textAlign: "right",
     paddingTop: 7,
     paddingRight: 5,
     paddingBottom: 5,
-    color: 'white',
+    color: "white",
   },
 });
 

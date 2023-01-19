@@ -1,8 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { MainProvider } from './Context/MainContext';
+import React from "react";
+import { MainProvider } from "./Context/MainContext";
 
-import MainComp from './Components/MainComp';
+import MainComp from "./Components/MainComp";
 
 const App = () => {
   return (

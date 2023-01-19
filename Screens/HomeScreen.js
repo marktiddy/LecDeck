@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import {
   View,
   Text,
@@ -6,13 +6,13 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableOpacity,
-} from 'react-native';
-import Title from '../Components/Title';
-import { MainContext } from '../Context/MainContext';
-import { AntDesign } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import moment from 'moment';
+} from "react-native";
+import Title from "../Components/Title";
+import { MainContext } from "../Context/MainContext";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import moment from "moment";
 
 const HomeScreen = ({ navigation }) => {
   const {
@@ -81,21 +81,23 @@ const HomeScreen = ({ navigation }) => {
 
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Session', {
+              navigation.navigate("Session", {
                 sundayIndex: currentSundayIndex,
               });
             }}
           >
             <View style={styles.baseInfo}>
               <Text style={styles.baseInfoText}>
-                This Sunday:{' '}
+                This Sunday:{" "}
                 {moment(lectionary.dates[currentSundayIndex])
                   .isoWeekday(7)
-                  .format('Do MMM YYYY')}
+                  .format("Do MMM YYYY")}
               </Text>
 
               <Text style={styles.baseInfoText}>
-                {appData[currentSundayIndex].sunday}
+                {typeof appData[currentSundayIndex] != "undefined"
+                  ? appData[currentSundayIndex].sunday
+                  : "Click for this Sunday's Session"}
               </Text>
             </View>
           </TouchableOpacity>
@@ -117,65 +119,65 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   welcome: {
-    color: '#1C3B98',
+    color: "#1C3B98",
     marginBottom: 14,
     fontSize: 22,
-    textAlign: 'center',
+    textAlign: "center",
   },
   text: {
     lineHeight: 26,
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
   },
   green: {
-    color: '#93C524',
+    color: "#93C524",
   },
   info: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 5,
     marginHorizontal: 10,
     padding: 5,
     borderRadius: 3,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   bgPink: {
-    backgroundColor: '#AF0834',
+    backgroundColor: "#AF0834",
   },
   bgGreen: {
-    backgroundColor: '#93C524',
+    backgroundColor: "#93C524",
   },
   bgBlue: {
-    backgroundColor: '#1C3B98',
+    backgroundColor: "#1C3B98",
   },
   bgRed: {
-    backgroundColor: '#840F2E',
+    backgroundColor: "#840F2E",
   },
   bgYellow: {
-    backgroundColor: '#E4A62D',
+    backgroundColor: "#E4A62D",
   },
   whiteText: {
-    color: 'white',
+    color: "white",
   },
   blackText: {
-    color: 'black',
+    color: "black",
   },
   icon: {
     marginRight: 10,
-    color: 'white',
+    color: "white",
     fontSize: 20,
     lineHeight: 22,
   },
   baseInfo: {
-    backgroundColor: '#6e487e',
+    backgroundColor: "#6e487e",
     borderRadius: 5,
     marginHorizontal: 10,
     padding: 8,
   },
   baseInfoText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
     lineHeight: 22,
   },
 });
