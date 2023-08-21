@@ -7,7 +7,7 @@
       "android",
       "web"
     ],
-    "version": "1.93",
+    "version": "1.94",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -34,13 +34,17 @@
     },
     "android": {
       "package": "com.mtmedia.lecdeck",
-      "versionCode": 16,
+      "versionCode": 21,
       "permissions": []
     },
     "extra": {
       "eas": {
         "projectId": "1309c285-9f08-4a7c-8686-5b3fc5698d28"
       }
-    }
+    },
+    "plugins": [
+      "expo-build-properties",
+      "sentry-expo"
+    ]
   }
 }

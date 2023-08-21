@@ -1,7 +1,7 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Header, Icon } from 'react-native-elements';
-import { Ionicons } from '@expo/vector-icons';
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import { Header, Icon } from "react-native-elements";
+import { Ionicons } from "@expo/vector-icons";
 
 const Title = ({ loadMenu }) => {
   const burgerPress = () => {
@@ -11,11 +11,11 @@ const Title = ({ loadMenu }) => {
   return (
     <Header
       centerComponent={{
-        text: 'LecDeck',
+        text: "LecDeck",
         style: {
-          color: '#fff',
+          color: "#fff",
           fontSize: 22,
-          fontWeight: '500',
+          fontWeight: "500",
         },
       }}
       leftComponent={

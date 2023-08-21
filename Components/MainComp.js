@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
-import { StatusBar, StyleSheet, Text } from 'react-native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import { MainContext } from '../Context/MainContext';
+import React, { useContext } from "react";
+import { StatusBar, StyleSheet, Text } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NavigationContainer } from "@react-navigation/native";
+import { MainContext } from "../Context/MainContext";
 
 //The custom drawer component
-import DrawerContent from './DrawerContent';
+import DrawerContent from "./DrawerContent";
 
 //Import screens
-import HomeScreen from '../Screens/HomeScreen';
-import SessionScreen from '../Screens/SessionScreen';
-import LoadingScreen from '../Screens/LoadingScreen';
+import HomeScreen from "../Screens/HomeScreen";
+import SessionScreen from "../Screens/SessionScreen";
+import LoadingScreen from "../Screens/LoadingScreen";
 //Create drawer navigator
 const Drawer = createDrawerNavigator();
 
@@ -27,16 +27,24 @@ const MainComp = () => {
       <Drawer.Navigator
         initialRouteName="Home"
         overlayColor="#840F2E"
-        drawerContentOptions={{
-          activeBackgroundColor: 'purple',
-          activeTintColor: '#ffffff',
-          inactiveTintColor: 'black',
-          inactiveBackgroundColor: 'grey',
+        screenOptions={{
+          drawerActiveBackgroundColor: "purple",
+          drawerActiveTintColor: "#ffffff",
+          drawerInactiveTintColor: "black",
+          drawerInactiveBackgroundColor: "grey",
         }}
         drawerContent={(props) => <DrawerContent {...props} />}
       >
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Session" component={SessionScreen} />
+        <Drawer.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
+          name="Session"
+          component={SessionScreen}
+          options={{ headerShown: false }}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );

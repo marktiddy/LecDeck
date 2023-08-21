@@ -1,16 +1,16 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from "react";
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Platform,
-} from 'react-native';
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { AntDesign, FontAwesome } from '@expo/vector-icons';
-import { MainContext } from '../Context/MainContext';
-import moment from 'moment';
-import DateComponent from './DateComponent';
+} from "react-native";
+import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import { MainContext } from "../Context/MainContext";
+import moment from "moment";
+import DateComponent from "./DateComponent";
 
 const DrawerContent = (props) => {
   const { lectionary, currentSundayIndex } = useContext(MainContext);
@@ -33,7 +33,7 @@ const DrawerContent = (props) => {
             sundayIndex={i}
             key={i}
             props={props}
-          />
+          />,
         );
       } else if (i === currentSundayIndex) {
         //This Sunday
@@ -43,7 +43,7 @@ const DrawerContent = (props) => {
             sundayIndex={i}
             key={i}
             props={props}
-          />
+          />,
         );
       } else {
         //Other Sunday in the future
@@ -55,7 +55,7 @@ const DrawerContent = (props) => {
             sundayIndex={i}
             key={i}
             props={props}
-          />
+          />,
         );
       }
     }
@@ -75,7 +75,7 @@ const DrawerContent = (props) => {
         <View
           style={[
             styles.closeButton,
-            Platform.OS === 'ios' ? styles.closeButtonIos : styles.closeButtonA,
+            Platform.OS === "ios" ? styles.closeButtonIos : styles.closeButtonA,
           ]}
         >
           <TouchableOpacity
@@ -87,9 +87,9 @@ const DrawerContent = (props) => {
           </TouchableOpacity>
         </View>
         <View
-          style={[styles.main, Platform.OS === 'ios' ? null : styles.mainA]}
+          style={[styles.main, Platform.OS === "ios" ? null : styles.mainA]}
         >
-          <TouchableOpacity onPress={() => props.navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => props.navigation.navigate("Home")}>
             <View style={styles.customItem}>
               <AntDesign name="home" style={styles.customItemIcon} />
               <Text style={styles.customItemText}>Home</Text>
@@ -124,32 +124,32 @@ const DrawerContent = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: "#212121",
     paddingTop: 25,
     paddingHorizontal: 10,
   },
   bottomArea: {
-    color: 'white',
+    color: "white",
     margin: 5,
   },
   bottomAreaText: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
     marginBottom: 10,
   },
   closeButton: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
   },
   closeButtonIos: {
     marginTop: 12,
   },
   closeButtonA: {
-    marginTop: -6,
+    marginTop: 2,
   },
   main: {
     marginTop: 10,
-    color: 'black',
+    color: "black",
   },
   mainA: {
     marginTop: 18,
@@ -160,28 +160,28 @@ const styles = StyleSheet.create({
   },
   item: {
     fontSize: 50,
-    backgroundColor: 'white',
-    color: 'black',
+    backgroundColor: "white",
+    color: "black",
   },
   customItem: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    backgroundColor: "white",
     marginVertical: 5,
     marginHorizontal: 10,
     padding: 8,
     borderRadius: 3,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   customItemText: {
-    color: '#212121',
+    color: "#212121",
     fontSize: 16,
   },
   redText: {
-    color: '#AF0834',
+    color: "#AF0834",
   },
   customItemIcon: {
-    color: '#212121',
+    color: "#212121",
     fontSize: 24,
     marginRight: 20,
   },
