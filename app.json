@@ -2,12 +2,8 @@
   "expo": {
     "name": "LecDeck",
     "slug": "LecDeck",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.94",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.95",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -30,7 +26,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.5"
+      "buildNumber": "1.6"
     },
     "android": {
       "package": "com.mtmedia.lecdeck",
@@ -42,9 +38,6 @@
         "projectId": "1309c285-9f08-4a7c-8686-5b3fc5698d28"
       }
     },
-    "plugins": [
-      "expo-build-properties",
-      "sentry-expo"
-    ]
+    "plugins": ["expo-build-properties", "sentry-expo"]
   }
 }

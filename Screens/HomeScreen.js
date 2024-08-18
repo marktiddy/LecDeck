@@ -15,13 +15,8 @@ import { Ionicons } from "@expo/vector-icons";
 import moment from "moment";
 
 const HomeScreen = ({ navigation }) => {
-  const {
-    appData,
-    lectionary,
-    error,
-
-    currentSundayIndex,
-  } = useContext(MainContext);
+  const { appData, lectionary, error, currentSundayIndex } =
+    useContext(MainContext);
 
   const loadMenu = () => {
     navigation.toggleDrawer();

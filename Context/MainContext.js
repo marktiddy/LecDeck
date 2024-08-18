@@ -4,6 +4,7 @@ import moment from "moment";
 //Some constants for use throughout
 const dates_to_use = {
   dates: [
+    "Sun, 20 Nov 2022 00:00:00 GMT",
     "Sun, 27 Nov 2022 00:00:00 GMT",
     "Sun, 04 Dec 2022 00:00:00 GMT",
     "Sun, 11 Dec 2022 00:00:00 GMT",
