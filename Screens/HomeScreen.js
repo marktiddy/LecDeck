@@ -57,7 +57,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={[styles.text, styles.whiteText]}>Prayer focus</Text>
           </View>
           <View style={[styles.info, styles.bgGreen]}>
-            <Ionicons name="ios-arrow-forward" style={styles.icon} />
+            <Ionicons name="arrow-forward" style={styles.icon} />
             <Text style={[styles.text, styles.whiteText]}>
               Weekly challenge
             </Text>

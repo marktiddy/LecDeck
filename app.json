@@ -3,9 +3,10 @@
     "name": "LecDeck",
     "slug": "LecDeck",
     "platforms": ["ios", "android", "web"],
-    "version": "1.95",
+    "version": "1.96",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -26,7 +27,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mtmedia.lecdeck",
-      "buildNumber": "1.6"
+      "buildNumber": "1.7"
     },
     "android": {
       "package": "com.mtmedia.lecdeck",

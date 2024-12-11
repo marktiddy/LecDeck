@@ -23,7 +23,7 @@ const Title = ({ loadMenu }) => {
         leftComponent={
           <TouchableOpacity>
             <Ionicons
-              name="ios-menu"
+              name="menu"
               size={26}
               color="white"
               onPress={burgerPress}
