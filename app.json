@@ -31,8 +31,15 @@
     },
     "android": {
       "package": "com.mtmedia.lecdeck",
-      "versionCode": 22,
-      "permissions": []
+      "versionCode": 23,
+      "compileSdkVersion": 33,
+      "targetSdkVersion": 33,
+      "buildToolsVersion": "33.0.0",
+      "kotlinVersion": "1.9.0",
+      "release": {
+        "buildType": "apk",
+        "image": "latest"
+      }
     },
     "extra": {
       "eas": {
