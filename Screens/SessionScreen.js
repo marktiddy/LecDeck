@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { MainContext } from "../Context/MainContext";
 import { Text, SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import Title from "../Components/Title";
-import { Overlay } from "react-native-elements";
+import { Overlay } from "@rneui/themed";
 import { AntDesign } from "@expo/vector-icons";
 import moment from "moment";
 

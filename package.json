@@ -5,7 +5,8 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "build": "eas build -p android"
   },
   "dependencies": {
     "@babel/runtime": "^7.22.10",
@@ -13,24 +14,26 @@
     "@react-navigation/drawer": "^6.5.7",
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/stack": "^6.3.11",
-    "expo": "^52.0.18",
-    "expo-build-properties": "~0.13.1",
+    "@rneui/base": "^0.0.0-edge.2",
+    "@rneui/themed": "^0.0.0-edge.2",
+    "expo": "^53.0.20",
+    "expo-build-properties": "~0.14.8",
     "moment": "^2.29.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.76.5",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.5",
     "react-native-elements": "^2.3.2",
-    "react-native-gesture-handler": "~2.20.2",
-    "react-native-reanimated": "~3.16.1",
-    "react-native-safe-area-context": "4.12.0",
-    "react-native-screens": "~4.1.0",
-    "react-native-web": "~0.19.13",
-    "react-native-webview": "13.12.5",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.11.1",
+    "react-native-web": "^0.20.0",
+    "react-native-webview": "13.13.5",
     "sentry-expo": "~7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "babel-preset-expo": "~12.0.0"
+    "babel-preset-expo": "~13.0.0"
   },
   "private": true,
   "name": "LecDeck",

@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
-import { Header, Icon } from "react-native-elements";
+import { Header, Icon } from "@rneui/themed";
 import { Ionicons } from "@expo/vector-icons";
 
 const Title = ({ loadMenu }) => {
